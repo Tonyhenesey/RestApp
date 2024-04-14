@@ -38,6 +38,8 @@ app.MapPut("/animals/{id}", (int id, Animal updateAnimal, MockDb db) =>
     animal.FurColor = updateAnimal.FurColor;
     return Results.Ok(animal);
 });
+
+
 app.MapDelete("/animals/{id}", (int id, MockDb db) =>
 {
     var animal = db.Animals.FirstOrDefault(a => a.Id == id);
